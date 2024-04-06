@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="text-center md:text-left">
                     <h1 className="text-4xl md:text-7xl mb-3">COX'S BAZAR</h1>
                     <p className="max-w-[435px]">Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                    <button className="btn bg-[#F9A51A] text-black btn-md mt-4"><Link to={"/booking"}>Book Now</Link></button>
+                    <button className="btn bg-[#F9A51A] text-black btn-md mt-4 border-0"><Link to={"/booking"}>Book Now</Link></button>
                 </div>
                 <div className="">
                     <Swiper 

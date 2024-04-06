@@ -54,9 +54,6 @@ const handleRegister =(e)=>{
                             <span className="label-text text-gray-700 text-xs">Password</span>
                         </label>
                         <input type="password" placeholder="Password" name="password" className="input input-bordered text-gray-700 bg-transparent border-gray-300 " required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover text-gray-700">Forgot password?</a>
-                        </label>
                         {
                             errorMessage && <p className='text-red-500 text-xs mt-4'>Error :{errorMessage} </p>
                         }
@@ -67,7 +64,7 @@ const handleRegister =(e)=>{
                     <div className="form-control mt-4">
                         <button className="btn btn-primary">Register</button>
                     </div>
-                    <div className="mt-4">
+                    <div className="mt-4 text-center">
                         <p className="text-gray-700 text-sm">Do Not Have Account ? <Link className="text-blue-600 font-semibold" to={"/login"}>Login</Link> </p>
                     </div>
                 </form>
