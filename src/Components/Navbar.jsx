@@ -22,7 +22,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className="flex items-center gap-60">
-                    <img className="" src="/public/logo.png" alt="" />
+                    <img className="" src="/logo.png" alt="" />
                 </div>
             </div>
 
@@ -38,6 +38,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to={"/login"} className="btn btn-sm text-xs border-0 bg-[#F9A51A] text-black">Login</Link>
+
+                {/* {user ?
+                    <button className="btn btn-ghost" onClick={handleSignOut}>Sign out</button> :
+                    <Link to={"/login"}>
+                        <button className="btn btn-ghost">Login</button>
+                    </Link>
+                } */}
             </div>
         </div>
     );

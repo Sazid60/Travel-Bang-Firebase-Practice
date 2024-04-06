@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import React, { useRef, useState } from 'react';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -39,12 +39,12 @@ const Home = () => {
                         navigation={true}
                         modules={[Pagination, Navigation,Autoplay]}
                         className="mySwiper">
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/Sajek.png" alt="" /></SwiperSlide>
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/Sreemongol.png" alt="" /></SwiperSlide>
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/sundorbon.png" alt="" /></SwiperSlide>
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/Sajek.png" alt="" /></SwiperSlide>
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/Sreemongol.png" alt="" /></SwiperSlide>
-                        <SwiperSlide><img className="h-72 shadow-2xl" src="/public/sundorbon.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/Sajek.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/Sreemongol.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/sundorbon.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/Sajek.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/Sreemongol.png" alt="" /></SwiperSlide>
+                        <SwiperSlide><img className="h-72 shadow-2xl" src="/sundorbon.png" alt="" /></SwiperSlide>
    
                     </Swiper>
                 </div>
