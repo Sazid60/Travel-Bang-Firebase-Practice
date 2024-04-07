@@ -28,11 +28,13 @@ const AuthProvider = ({ children }) => {
 
     // Sign In With Google
     const googleSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     // SignIn With Github
     const gitHubSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, gitHubProvider)
     }
 
@@ -40,10 +42,12 @@ const AuthProvider = ({ children }) => {
 
     // SignIn With Twitter
     const twitterSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, twitterProvider)
     }
     // SignIn With Facebook
     const facebookSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, facebookProvider)
     }
 
@@ -67,7 +71,7 @@ const AuthProvider = ({ children }) => {
 
 
     const authInfo = {
-        user, setLoading, signUp, signIn, logOut, googleSignIn, gitHubSignIn, twitterSignIn,facebookSignIn
+        user, setLoading, signUp, signIn, logOut, googleSignIn, gitHubSignIn, twitterSignIn,facebookSignIn,loading
     }
 
     return (

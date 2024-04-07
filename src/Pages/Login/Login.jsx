@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation,useNavigate} from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext, useState } from "react";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
@@ -6,10 +6,12 @@ import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 
 
 const Login = () => {
-    const { signIn,googleSignIn,gitHubSignIn,twitterSignIn,facebookSignIn } = useContext(AuthContext)
+    const { signIn, googleSignIn, gitHubSignIn, twitterSignIn, facebookSignIn } = useContext(AuthContext)
     const [success, setSuccess] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
 
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleSignIn = (e) => {
         e.preventDefault()
@@ -22,12 +24,22 @@ const Login = () => {
         signIn(email, password)
             .then(() => {
                 setSuccess("Logged In Successful")
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 setErrorMessage(error.message)
             })
-
     }
+
+    // Social Login
+    const handleSocialLogin = (socialProvider) => {
+
+        socialProvider()
+            .then(()=>  // navigate after login
+            navigate(location?.state ? location.state : '/')
+        )
+    }
+
     return (
         <div className="hero ">
             <div className="hero-content flex-col w-full">
@@ -66,11 +78,11 @@ const Login = () => {
                     </form>
                     <div className="divider text-gray-700">Continue With</div>
                     <div className="flex justify-center gap-4 mb-6">
-                        <button className="btn rounded-full" onClick={()=>googleSignIn()}><FaGoogle /></button>
-                        <button className="btn rounded-full" onClick={()=>gitHubSignIn()}><FaGithub /></button>
-                        <button className="btn rounded-full" onClick={()=>twitterSignIn()}><FaTwitter /></button>
-                        <button className="btn rounded-full" onClick={()=>facebookSignIn()}><FaFacebook /></button>
-                </div>
+                        <button className="btn rounded-full" onClick={() => handleSocialLogin(googleSignIn)}><FaGoogle /></button>
+                        <button className="btn rounded-full" onClick={() => handleSocialLogin(gitHubSignIn)}><FaGithub /></button>
+                        <button className="btn rounded-full" onClick={() => handleSocialLogin(twitterSignIn)}><FaTwitter /></button>
+                        <button className="btn rounded-full" onClick={() => handleSocialLogin(facebookSignIn)}><FaFacebook /></button>
+                    </div>
                 </div>
             </div>
         </div>

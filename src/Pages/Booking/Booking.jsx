@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -27,7 +28,7 @@ const Booking = () => {
                         <label htmlFor="date-to" className="block text-sm font-medium text-gray-700">To:</label>
                         <input type="date" id="date-to" name="date-to" className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-transparent text-gray-700" />
                     </div>
-                    <button type="submit" className="btn w-full text-white bg-[#F9A51A] border-0 ">Book Now</button>
+                    <Link to={"/booking/cox"}><button type="submit" className="btn w-full text-white bg-[#F9A51A] border-0 ">Book Now</button></Link>
                 </div>
             </div>
         </div>
