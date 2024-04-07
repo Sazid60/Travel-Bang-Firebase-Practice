@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useContext, useState } from "react";
+import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
+    const { signIn,googleSignIn,gitHubSignIn,twitterSignIn,facebookSignIn } = useContext(AuthContext)
     const [success, setSuccess] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
-   
+
 
     const handleSignIn = (e) => {
         e.preventDefault()
@@ -63,6 +64,13 @@ const Login = () => {
                             <p className="text-gray-700 text-sm">Do Not Have Account ? <Link className="text-blue-600 font-semibold" to={"/register"}>Register</Link> </p>
                         </div>
                     </form>
+                    <div className="divider text-gray-700">Continue With</div>
+                    <div className="flex justify-center gap-4 mb-6">
+                        <button className="btn rounded-full" onClick={()=>googleSignIn()}><FaGoogle /></button>
+                        <button className="btn rounded-full" onClick={()=>gitHubSignIn()}><FaGithub /></button>
+                        <button className="btn rounded-full" onClick={()=>twitterSignIn()}><FaTwitter /></button>
+                        <button className="btn rounded-full" onClick={()=>facebookSignIn()}><FaFacebook /></button>
+                </div>
                 </div>
             </div>
         </div>

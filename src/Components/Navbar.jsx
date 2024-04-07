@@ -4,19 +4,19 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
-    const {user,logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     // const [success, setSuccess] = useState("")
     // const [errorMessage, setErrorMessage] = useState("")
 
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
 
         logOut()
-        .then(() => {
-            console.log("Logged Out")
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+            .then(() => {
+                console.log("Logged Out")
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
     const links = <>
         <li><Link to={"/"}>Home</Link></li>
@@ -36,28 +36,39 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                
+
                 <div className="flex items-center gap-60">
                     <img className="" src="/logo.png" alt="" />
                 </div>
             </div>
 
             <div className=" hidden lg:flex w-[30%]">
-                        <input type="text" placeholder="Search" className="input input-bordered w-full flex-grow bg-white bg-opacity-40" />
-                    </div>
+                <input type="text" placeholder="Search" className="input input-bordered w-full flex-grow bg-white bg-opacity-40" />
+            </div>
 
 
             <div className="navbar-end">
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden lg:flex mr-10">
                     <ul className="menu menu-horizontal px-1">
                         {links}
                     </ul>
                 </div>
                 {user ?
-                    <button className="btn btn-ghost" onClick={handleSignOut}>Sign out</button> :
-                    <Link to={"/login"}>
-                        <button className="btn btn-ghost">Login</button>
-                    </Link>
+                    <div className="flex items-center gap-4">
+                        <button className="btn btn-ghost bg-[#F9A51A]" onClick={handleSignOut}>Sign out</button>
+                        <div className="">
+                            <img className="rounded-full h-14 w-14" src={user.photoURL} alt="" />
+                        </div>
+                    </div> :
+                    <div className="flex items-center gap-4">
+                        <Link to={"/login"}>
+                            <button className="btn btn-ghost bg-[#F9A51A]">Login</button>
+                        </Link>
+                        <div className="">
+                            <img className="rounded-full h-14 w-14" src="/Capture.PNG" alt="" />
+                        </div>
+                    </div>
+
                 }
             </div>
         </div>

@@ -30,7 +30,7 @@ const Home = () => {
                         delay: 2500,
                         disableOnInteraction: false,
                       }}
-                        slidesPerView={2}
+                        slidesPerView={3}
                         centeredSlides={true}
                         spaceBetween={10}
                         pagination={{

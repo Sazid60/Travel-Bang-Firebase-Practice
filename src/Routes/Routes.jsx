@@ -6,6 +6,9 @@ import Booking from "../Pages/Booking/Booking";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 
+
+
+
 const router = createBrowserRouter([
     {
       path: "/",
